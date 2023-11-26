@@ -2,16 +2,17 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { EstacionamientoComponent } from './dashboard/estacionamiento/estacionamiento.component';
 import { NotasComponent } from './dashboard/notas/notas.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: HomeComponent },
   { path: 'estacionamiento', component: EstacionamientoComponent },
   { path: 'notas', component: NotasComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta por defecto
-  { path: '**', redirectTo: '/home', pathMatch: 'full' } // Ruta para cualquier otra URL
 ];
 
 @NgModule({
