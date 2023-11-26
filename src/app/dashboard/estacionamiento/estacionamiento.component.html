@@ -1,0 +1,12 @@
+<form (ngSubmit)="calcularCosto()">
+  <label for="horas">Horas:</label>
+  <input type="number" id="horas" name="horas" [(ngModel)]="horas" required>
+
+  <label for="minutos">Minutos:</label>
+  <input type="number" id="minutos" name="minutos" [(ngModel)]="minutos" required>
+
+  <button type="submit">Calcular Costo</button>
+</form>
+
+<p *ngIf="montoAPagar !== null">El monto a pagar es: {{ montoAPagar | currency }}</p>
+
